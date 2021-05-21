@@ -8,3 +8,10 @@
     height: 200px;
     border: solid black 1px;
 }
+
+h1#time-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FF0000;
+}
