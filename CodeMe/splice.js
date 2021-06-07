@@ -5,9 +5,10 @@ arr.splice(1, 1);
 console.log(arr);
 
 function htmlColorNames(arr) {
-    // Only change code below this line
+    // Erster Teil Platz im Array, 2. Die Länge und als 3. Parameter wird ersetzt
     arr.splice(0, 1, "DarkSalmon");
     arr.splice(1, 1, "BlanchedAlmond");
+    arr.splice(2, 4, "Alora");
     // arr.push("DarkSalmon", "BlanchedAlmond");
 
     // Only change code above this line
@@ -20,5 +21,11 @@ console.log(
         "LavenderBlush",
         "PaleTurquoise",
         "FireBrick",
+        "FireBrick02",
+        "FireBrick03",
     ])
 );
+
+for (let i = 0; i < 10; i++) {
+    console.log("Love my Job " + i);
+}
