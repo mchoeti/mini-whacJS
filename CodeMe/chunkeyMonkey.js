@@ -38,3 +38,22 @@ chunkArrayInGroups(["a", "b", "c", "d", "e", "f", "g"], 3);
 
 // array.forEach((element) => {
 //     console.log(element);
+
+// Spontan um 5 erhöhen
+let newArr = [];
+for (let i = 0; i <= 20; i += 5) {
+    newArr.push(i);
+    console.log(newArr);
+}
+
+console.log("###################################");
+let newMixedArray = [];
+for (let i = 0; i <= 20; i++) {
+    if (i % 5 === 0) {
+        newMixedArray.push(i);
+        console.log(newMixedArray);
+    } else {
+        newMixedArray.unshift("OIS", i);
+        console.log(newMixedArray);
+    }
+}
