@@ -35,7 +35,15 @@ function countDown() {
     const minutes = Math.floor((timeSpan % hour) / minute);
     const seconds = Math.floor((timeSpan % minute) / second);
 
-    timeLeft.innerHTML = days + "days " + hours + " hours " + minutes + " min " + seconds + " seconds";
+    timeLeft.innerHTML =
+        days +
+        "days " +
+        hours +
+        " hours " +
+        minutes +
+        " min " +
+        seconds +
+        " seconds";
 }
 
 setInterval(countDown, second);
