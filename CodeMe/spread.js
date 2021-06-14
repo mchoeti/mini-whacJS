@@ -27,3 +27,10 @@ function spreadOut() {
     return sentence;
 }
 console.log(spreadOut());
+
+let test = 10;
+if (test === 10) {
+    console.log("Congratulation it is a 10");
+} else {
+    console.log("Not really");
+}
