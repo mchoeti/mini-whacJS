@@ -25,9 +25,9 @@ function isEveryoneHere(userObj) {
         userObj.hasOwnProperty("Sarah") &&
         userObj.hasOwnProperty("Ryan")
     ) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
     // Only change code above this line
 }
