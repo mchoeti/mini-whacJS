@@ -22,3 +22,5 @@ function getArrayOfUsers(obj) {
     return Object.keys(obj);
     // Only change code above this line
 }
+
+console.log(getArrayOfUsers(users));
