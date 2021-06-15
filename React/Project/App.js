@@ -15,3 +15,14 @@ export default class App extends Component {
         )
     }
 }
+
+
+React.createElement(
+    "div",
+    {id: "hello"},
+    React.createElment(
+        "p",
+        null,
+        "Lorem, ipsum."
+    )
+);
