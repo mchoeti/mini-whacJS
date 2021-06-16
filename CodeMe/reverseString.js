@@ -13,3 +13,10 @@ function reverseString(str) {
 }
 
 console.log(reverseString("hello"));
+
+function reverseString2(str) {
+    let strReverse = str.split('').reverse().join(''); // 'lkjhgfdsa'
+    return strReverse;
+}
+
+console.log("New short Simple Reverse: ", reverseString2("abcdefgh"));
