@@ -35,4 +35,6 @@ for (var i = 0; i < mySimpleArray.length; i++) {
     //return largestNumber;
 }
 
+console.log("Holliday Commit !!!");
+
 //console.log("Hallo largestet Number: ", largestNumber);
