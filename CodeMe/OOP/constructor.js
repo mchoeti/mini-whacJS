@@ -10,7 +10,7 @@ function Dog() {
     this.numLegs = 4;
 }
 
-let hound = new Dog();
-console.log("Std Name: ", hound);
-hound.name = "Neuer Name";
-console.log(hound);
+let terrier = new Dog();
+console.log("Std Name: ", terrier);
+terrier.name = "Neuer Name";
+console.log(terrier);
