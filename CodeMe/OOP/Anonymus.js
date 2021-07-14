@@ -18,7 +18,7 @@ let funModule = (function () {
                 console.log("Flying, wooosh!");
             };
         }
-    }
+    };
 })();
 
 
