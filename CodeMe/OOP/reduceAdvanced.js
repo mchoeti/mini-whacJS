@@ -12,6 +12,8 @@ const users = [{
     }
 ];
 
+// Anpassen
+
 // Nun geben wir den namen als Property und as alter als Value zurück
 const usersObj = users.reduce((obj, user) => {
     obj[user.name] = user.age;
