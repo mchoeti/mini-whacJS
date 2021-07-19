@@ -116,7 +116,7 @@ function getRating(watchList) {
     var averageRating;
     var director = (director) => "TEST";
 
-    averageRating = watchList.reduce(director, 4)
+    averageRating = watchList.reduce(director, 4);
 
     // Only change code above this line
     return averageRating;
