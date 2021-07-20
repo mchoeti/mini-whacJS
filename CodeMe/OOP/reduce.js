@@ -113,12 +113,36 @@ var watchList = [{
 
 function getRating(watchList) {
     // Only change code below this line
-    var averageRating;
-    var director = (director) => "TEST";
+    // Nun geben wir den namen als Property und as alter als Value zurück
+    /* const averageRating = watchList.reduce((obj, wlmovie) => {
+         obj[wlmovie.Title] = wlmovie.imdbRating;
+         return obj;
+     }, {}); */
 
-    averageRating = watchList.reduce(director, 4);
+    // und jetzt richtig
+    var averageRating =
+        watchList
+        .filter(film => film.Director === "Christopher Nolan")
+        // Use map to convert their ratings from strings to numbers
+        .map(film => Number(film.imdbRating))
+        // Use reduce to add together their ratings 8.8 +  8.6 +  9 + 8.3
+        // & Divide by the number of Nolan films to get the average rating
+        .reduce((sumOfRatings, rating) => sumOfRatings + rating) /
+        watchList.filter(film => film.Director === "Christopher Nolan").length;
+    // Add your code above this l
 
     // Only change code above this line
     return averageRating;
 }
 console.log(getRating(watchList));
+
+
+// show only the Movies from Cameron
+function getDirector(watchList) {
+    var favoriteDirector =
+        watchList
+        .filter(film => film.Director === "James Cameron")
+        .map(film => String(film.Title))
+    return favoriteDirector;
+}
+console.log(getDirector(watchList));
