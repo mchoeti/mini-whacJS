@@ -146,3 +146,7 @@ function getDirector(watchList) {
     return favoriteDirector;
 }
 console.log(getDirector(watchList));
+
+// Kleiner Tipp
+// Die map() (engl. abbilden) Methode wendet auf jedes Element des Arrays die bereitgestellte Funktion an
+// und gibt das Ergebnis in einem neuen Array zurück.
