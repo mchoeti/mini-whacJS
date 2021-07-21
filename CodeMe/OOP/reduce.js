@@ -142,7 +142,7 @@ function getDirector(watchList) {
     var favoriteDirector =
         watchList
         .filter(film => film.Director === "James Cameron")
-        .map(film => String(film.Title))
+        .map(film => String(film.Title));
     return favoriteDirector;
 }
 console.log(getDirector(watchList));
