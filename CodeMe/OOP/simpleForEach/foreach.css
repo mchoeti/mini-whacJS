@@ -1,0 +1,21 @@
+
+.grid {
+	width: 606px;
+	height: 206px;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+
+.square {
+	height: 200px;
+	width: 200px;
+	border: solid black 1px;
+}
+
+
+div {
+    height: 100px;
+    width: 100px;
+    background-color: lightblue;
+};
