@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>This example uses the addEventListener() method to attach a click event to a button.</p>
+
+    <button id="myBtn">Try it</button>
+    <button id="myBtn2">Reset me</button>
+
+    <!-- <p><strong>Note:</strong> The addEventListener() method is not supported in Internet Explorer 8 and earlier
+        versions.</p> -->
+
+    <p id="demo">Original</p>
+
+    <script>
+
+        // einmal die Variable target definiert, ist einfacher zum lesen
+        // und dann in 2 Varianten umgesetzt einmal lang mit document...  und einmal nur mit variabler
+        const target = document.getElementById("demo");
+        document.getElementById("myBtn").addEventListener("click", function () {
+            target.innerHTML = "Hello World";
+        });
+
+        const secondOne = document.getElementById("myBtn2");
+        secondOne.addEventListener("click", function () {
+            target.innerHTML = "Original";
+        });
+
+    // function clickOutcome() {
+    // console.log("Hallo again oder so");
+    // alert("You did it");
+    // }
+
+    </script>
+
+</body>
+
+</html>
