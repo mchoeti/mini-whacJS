@@ -20,3 +20,13 @@ splitify("Hello World,I-am code");
 
 more here: https://www.keycdn.com/support/regex-cheatsheet
 */
+
+
+/* oder noch simpler
+    var newArray = str.split(" ");
+    console.log("Vorher: " , newArray);
+    newArray = str.split(/\W/);
+    console.log("Nachher " , newArray);
+    return newArray;
+
+    */
