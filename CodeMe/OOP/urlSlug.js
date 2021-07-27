@@ -13,11 +13,6 @@ function urlSlug(title) {
         .split(/\s+/)
         .join("-");
 
-    return title
-        .toLowerCase()
-        .trim()
-        .split(/\s+/)
-        .join("-");
 }
 
 console.log(urlSlug(" Winter is coming"));
