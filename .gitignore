@@ -1184,3 +1184,7 @@ CodeMe/ECM/node_modules/verror/package.json
 CodeMe/ECM/node_modules/verror/README.md
 CodeMe/ECM/node_modules/verror/lib/verror.js
 CodeMe/OOP/nodejsPost.js
+CodeMe/ECM/EcmGETthings.js
+CodeMe/ECM/EcmPOSTthings.js
+CodeMe/ECM/EcmPUTThings.js
+CodeMe/ECM/getRequest.js
