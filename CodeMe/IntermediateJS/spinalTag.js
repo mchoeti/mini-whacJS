@@ -5,11 +5,20 @@ sollte dann so aussehen  this-is-spinal-tap
 */
 
 function spinalCase(str) {
-    return str;
+    const newArr = str;
+    return newArr
+        .split(/\s|_|(?=[A-Z])/)
+        .join("-")
+        .toLowerCase();
 }
-
 console.log(spinalCase('This Is Spinal Tap'));
 
+/* 
+  return str
+    .split(/\s|_|(?=[A-Z])/)
+    .join("-")
+    .toLowerCase();
+*/
 
 /* Tipps
 Hint 1: Create a regular expression for all white spaces and underscores.
