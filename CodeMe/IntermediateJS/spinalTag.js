@@ -5,11 +5,11 @@ sollte dann so aussehen  this-is-spinal-tap
 */
 
 function spinalCase(str) {
-    const newArr = str;
-    return newArr
-        .split(/\s|_|(?=[A-Z])/)
-        .join("-")
-        .toLowerCase();
+  const newArr = str;
+  return newArr
+    .split(/\s|_|(?=[A-Z])/)
+    .join("-")
+    .toLowerCase();
 }
 console.log(spinalCase('This Is Spinal Tap'));
 
@@ -18,6 +18,7 @@ console.log(spinalCase('This Is Spinal Tap'));
     .split(/\s|_|(?=[A-Z])/)
     .join("-")
     .toLowerCase();
+
 */
 
 /* Tipps
