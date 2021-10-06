@@ -1,3 +1,5 @@
+// Simple sample of some DOM Manipulation
+
 //const text = document.querySelector("h1");
 const text = document.querySelector(".title");
 const changeColor = document.querySelector(".changeColor");
