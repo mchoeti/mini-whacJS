@@ -4,8 +4,8 @@ const calcAge2 = function (birthYear) {
 
 console.log(calcAge2(1977));
 
-const calcAge3 = birthYear => 2021 - birthYear;
-const age3 = calcAge3(1976);
+const calcAgeNeu = birthYear => 2021 - birthYear;
+const age3 = calcAgeNeu(1976);
 
 console.log(age3);
 
@@ -22,3 +22,4 @@ const yearsToRetirement = (birthYear, firstName) => {
 //console.log("Noch ", yearsToRetirement(1977), " Jahre arbeiten");
 console.log(yearsToRetirement(1977, "Christian"));
 console.log(yearsToRetirement(1978, "Jürgen"));
+// ALT und Pfeil rauf oder runter bring halt die ganze Line rauf.
