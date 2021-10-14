@@ -13,13 +13,13 @@ const countdown = () => {
 
     // calculate the things
     const textDay = Math.floor(gap / day);
-    console.log(textDay);
+    //console.log(textDay);
     const textHour = Math.floor((gap % day) / hour);
-    console.log(textHour);
+    //console.log(textHour);
     const textMinute = Math.floor((gap % hour) / minute);
-    console.log(textMinute);
+    // console.log(textMinute);
     const textSecond = Math.floor((gap % minute) / second);
-    console.log(textSecond);
+    // console.log(textSecond);
 
     // Update HTML 
     document.querySelector(".day").innerText = textDay;
