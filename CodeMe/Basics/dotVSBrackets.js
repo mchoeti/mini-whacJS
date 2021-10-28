@@ -42,6 +42,6 @@ console.log(firstPart, secondPart);
 
 // oder noch cooler mit neuem JS6
 const firstES6 = `${christian.name}` + " hat " + `${christian.friends.length}` + " Freunde";
-const secondES6 = " Sein bester nennt sich " + `${christian.friends[1]}`;
+const secondES6 = " Sein bester ist: " + `${christian.friends[1]}`;
 console.log("Neues JS --------nun Terence---------");
 console.log(firstES6, secondES6);
