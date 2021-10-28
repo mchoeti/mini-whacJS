@@ -13,17 +13,15 @@ const christian = {
     },
 
     theAnswer: function () {
-        console.log("Hallo Du");
-        console.log(`Hallo ${christian.name} du bist ${christian.calcAge(2021)}  Jahre alt und hast du Kinder ${christian.hasChilds}`);
+        return `${christian.name} du bist ${christian.calcAge(2021)}  Jahre alt und hast  ${christian.hasChilds ? '1' : "kein"} Kind`;
     }
 };
 
 console.log(christian.calcAge(2025));
 // in das Object eingebaut und damit als Methode aufgerufen
+console.log("-----------------------");
 console.log(christian.theAnswer());
 
 // Alternativ natürlichn außerhalb des Objektes, dann ist es eine Funktion
 // function theAnswer() {
-//     console.log("Hallo Du");
-//     console.log(`Hallo ${christian.name} du bist ${christian.calcAge(2021)}  Jahre alt und hast du Kinder ${christian.hasChilds}`);
-// }
+//     ........................
