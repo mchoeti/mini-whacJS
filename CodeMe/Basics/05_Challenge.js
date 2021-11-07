@@ -56,3 +56,5 @@ console.log(calcAverage([2, 3, 5, 7]));
 console.log(calcAverage(bills));
 console.log(calcAverage(tips));
 console.log(calcAverage(totals));
+
+const x = 23;
