@@ -24,10 +24,23 @@ document.querySelector(".check").addEventListener("click", function () {
     // a bisserl DOm mainpulieren
     //document.querySelector('.message').textContent = "SUPER 🎊 GEIL !!";
 
+
+    // When there is no input
     if (!guess) {
         document.querySelector(".message").textContent = " ⛔ Well there is no secretNumber";
+
+        // When player wins
     } else if (guess === secretNumber) {
         document.querySelector(".message").textContent = " 🎊  Well DONE!!";
+
+        // adding colour change when player wins
+        // ion JS können wir aber nur NAmen nehmen im CSS wäre es background-colour 
+        // JS macht hier am besten ein CamelCase draus backgroundColor
+        // geht aber auch mit einer #60b347 oder so
+        document.querySelector("body").style.backgroundColor = "green";
+        document.querySelector(".number").style.width = "30rem";
+
+        // When it is to high
     } else if (guess >= secretNumber) {
         if (score > 1) {
             document.querySelector(".message").textContent = " Leider zu hoch";
@@ -37,6 +50,8 @@ document.querySelector(".check").addEventListener("click", function () {
             document.querySelector(".message").textContent = " You lost !!!";
             document.querySelector(".score").textContent = 0;
         }
+
+        // When it is to low
     } else if (guess <= secretNumber) {
         if (score > 1) {
             document.querySelector(".message").textContent = " Leider zu klein";
