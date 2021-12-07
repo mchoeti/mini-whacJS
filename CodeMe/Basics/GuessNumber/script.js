@@ -5,6 +5,7 @@
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 //console.log(secretNumber);
 let score = 20; // initial score
+let highscore = 0;
 
 
 // Verstecken der Nummer
@@ -42,6 +43,12 @@ document.querySelector(".check").addEventListener("click", function () {
         // geht aber auch mit einer #60b347 oder so
         document.querySelector("body").style.backgroundColor = "green";
         document.querySelector(".number").style.width = "30rem";
+
+        if (score >= highscore) {
+            highscore = score;
+            console.log("New HighScore", highscore);
+            document.querySelector(".highscore").textContent = highscore;
+        }
 
         // When it is to high
     } else if (guess >= secretNumber) {
