@@ -45,7 +45,6 @@ document.querySelector(".check").addEventListener("click", function () {
         // Wird erst angezeigt, wenn wir richtig sind
         document.querySelector(".number").textContent = secretNumber;
 
-
         // adding colour change when player wins
         // ion JS können wir aber nur NAmen nehmen im CSS wäre es background-colour 
         // JS macht hier am besten ein CamelCase draus backgroundColor
