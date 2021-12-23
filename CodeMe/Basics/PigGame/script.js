@@ -21,7 +21,7 @@ const btnHold = document.querySelector(".btn--hold");
 score0EL.textContent = resetValue;
 score1EL.textContent = resetValue;
 diceEl.classList.add("hidden");
-
+// Christmas commit
 
 // Roll the Dice Function
 btnRoll.addEventListener("click", function () {
