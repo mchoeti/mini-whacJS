@@ -8,6 +8,7 @@ const scores = [0, 0];
 // Score definieren, muss ein let sein, weil wir updaten :-)
 let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 
 // mal ein paar Vars definieren
 const player0E = document.querySelector(".player--0");
@@ -62,18 +63,7 @@ btnRoll.addEventListener("click", function () {
         //current0El.textContent = currentScore;
 
     } else {
-
         switchPlayer();
-
-        // console.log("Der Wert is 1, Spielerwechsel");
-        // //current0El.textContent = "0";
-        // document.getElementById(`current--${activePlayer}`).textContent = 0;
-        // // Mit turnery Operator. Wenn Player = 0  dann 1 wenn 1 dann null
-        // currentScore = 0;
-        // activePlayer = activePlayer === 0 ? 1 : 0;
-        // // fügt oder entfernt die vorhandene Klasse
-        // player0E.classList.toggle("player--active");
-        // player1E.classList.toggle("player--active");
     }
 });
 
@@ -85,13 +75,23 @@ btnHold.addEventListener("click", function () {
     // checken ob score >= 100 ist weil hier gibts an WIn 
     console.log("Hold me now !!!");
 
-    // Switch the next player
-    switchPlayer();
-    if (currentScore <= 100) {
+    if (scores[activePlayer] >= 10) {
         console.log("you WOON");
+        playing = false;
+        // beim Query selector wenn du eine Klassa aufrufst bitte auch den punkt machen :-)
+        document
+            .querySelector(`.player--${activePlayer}`)
+            .classList.add("player--winner");
+        document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
+    } else {
+        // Switch the next player
+        switchPlayer();
     }
 
 });
+
+// bei getElmwent by ID nur den ID NAmen anzugeben
+// bei query Selector muss die Klasse, bzw. der . angegeben werden.
 
 
 // Reset definieren
