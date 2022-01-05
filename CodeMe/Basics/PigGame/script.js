@@ -46,48 +46,51 @@ diceEl.classList.add("hidden");
 
 // Roll the Dice Function
 btnRoll.addEventListener("click", function () {
-    // Generate a random rolled
-    const dice = Math.trunc(Math.random() * 6) + 1;
-    console.log("Der Wert ist: ", dice);
-    // display the Dice und dann wechseln wir auch gleich das Bild
-    diceEl.classList.remove("hidden");
-    diceEl.src = `dice-${dice}.png`;
-
-
-    // check if dice == 1
-    if (dice !== 1) {
-        console.log("Go on...");
-        currentScore += dice;
-        // select active Player mit neuer JS6
-        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
-        //current0El.textContent = currentScore;
-
-    } else {
-        switchPlayer();
+    // Soll nur laufen, wenn playing true ist.
+    if (playing) {
+        // Generate a random rolled
+        const dice = Math.trunc(Math.random() * 6) + 1;
+        console.log("Der Wert ist: ", dice);
+        // display the Dice und dann wechseln wir auch gleich das Bild
+        diceEl.classList.remove("hidden");
+        diceEl.src = `dice-${dice}.png`;
+        // check if dice == 1
+        if (dice !== 1) {
+            console.log("Go on...");
+            currentScore += dice;
+            // select active Player mit neuer JS6
+            document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+            //current0El.textContent = currentScore;
+        } else {
+            switchPlayer();
+        }
     }
 });
 
-
 btnHold.addEventListener("click", function () {
-    // add current score to player score0EL
-    scores[activePlayer] += currentScore;
-    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
-    // checken ob score >= 100 ist weil hier gibts an WIn 
-    console.log("Hold me now !!!");
 
-    if (scores[activePlayer] >= 10) {
-        console.log("you WOON");
-        playing = false;
-        // beim Query selector wenn du eine Klassa aufrufst bitte auch den punkt machen :-)
-        document
-            .querySelector(`.player--${activePlayer}`)
-            .classList.add("player--winner");
-        document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
-    } else {
-        // Switch the next player
-        switchPlayer();
+    if (playing) {
+        // add current score to player score0EL
+        scores[activePlayer] += currentScore;
+        document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+        // checken ob score >= 100 ist weil hier gibts an WIn 
+        console.log("Hold me now !!!");
+
+        if (scores[activePlayer] >= 20) {
+            console.log("you WOON");
+            playing = false;
+            // beim Query selector wenn du eine Klassa aufrufst bitte auch den punkt machen :-)
+            document
+                .querySelector(`.player--${activePlayer}`)
+                .classList.add("player--winner");
+            document.querySelector(`.player--${activePlayer}`).classList.remove("player--active");
+            // Würfel verstecken wenn das Spiel aus ist
+            diceEl.classList.add("hidden");
+        } else {
+            // Switch the next player
+            switchPlayer();
+        }
     }
-
 });
 
 // bei getElmwent by ID nur den ID NAmen anzugeben
@@ -108,34 +111,3 @@ document.querySelector(".btn--new").addEventListener("click", function () {
     diceEl.classList.add("hidden");
     //document.querySelectorAll("#score--0", #score--1).textContent = resetValue;
 });
-
-// Roll the dice definieren.
-// document.querySelector(".btn--roll").addEventListener("click", function () {
-//     console.log("Roll the dice");
-// });
-
-// HOld you Roll and pass to the next player
-// document.querySelector(".btn--hold").addEventListener("click", function () {
-//     console.log("Hold me now !!!");
-// });
-
-
-
-
-
-// document.querySelector(".again").addEventListener("click", function () {
-//     console.log("You Clicked again");
-//     // Neue Nummer wenn du nochmals spielen willst
-//     score = 20;
-//     secretNumber = Math.trunc(Math.random() * 20) + 1;
-//     // restore number , score and 
-//     //document.querySelector(".message").textContent = "Start guessing...";
-//     displayMessage("Start guessing...");
-
-//     document.querySelector(".score").textContent = score;
-//     document.querySelector(".number").textContent = "?";
-//     // Input ist immer ein String
-//     document.querySelector(".guess").textContent = "";
-//     document.querySelector("body").style.backgroundColor = "#222";
-//     document.querySelector(".number").style.width = "15rem";
-// });
