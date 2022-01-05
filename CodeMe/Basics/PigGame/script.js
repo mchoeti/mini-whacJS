@@ -22,6 +22,21 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+
+// Code niemals 2 mal verwenden daher DRY eine Funktion brauchen
+// und weil wir keine Parameter brauchen, Code is ja gleich kann man das so super einbauen
+const switchPlayer = function () {
+    console.log("Der Wert is 1, Spielerwechsel");
+    //current0El.textContent = "0";
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // Mit turnery Operator. Wenn Player = 0  dann 1 wenn 1 dann null
+    currentScore = 0;
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    // fügt oder entfernt die vorhandene Klasse
+    player0E.classList.toggle("player--active");
+    player1E.classList.toggle("player--active");
+};
+
 // Werte auf 0 setzen beim Start
 score0EL.textContent = resetValue;
 score1EL.textContent = resetValue;
@@ -47,18 +62,36 @@ btnRoll.addEventListener("click", function () {
         //current0El.textContent = currentScore;
 
     } else {
-        console.log("Der Wert is 1, Spielerwechsel");
-        //current0El.textContent = "0";
-        document.getElementById(`current--${activePlayer}`).textContent = 0;
-        // Mit turnery Operator. Wenn Player = 0  dann 1 wenn 1 dann null
-        currentScore = 0;
-        activePlayer = activePlayer === 0 ? 1 : 0;
-        // fügt oder entfernt die vorhandene Klasse
-        player0E.classList.toggle("player--active");
-        player1E.classList.toggle("player--active");
+
+        switchPlayer();
+
+        // console.log("Der Wert is 1, Spielerwechsel");
+        // //current0El.textContent = "0";
+        // document.getElementById(`current--${activePlayer}`).textContent = 0;
+        // // Mit turnery Operator. Wenn Player = 0  dann 1 wenn 1 dann null
+        // currentScore = 0;
+        // activePlayer = activePlayer === 0 ? 1 : 0;
+        // // fügt oder entfernt die vorhandene Klasse
+        // player0E.classList.toggle("player--active");
+        // player1E.classList.toggle("player--active");
     }
 });
 
+
+btnHold.addEventListener("click", function () {
+    // add current score to player score0EL
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
+    // checken ob score >= 100 ist weil hier gibts an WIn 
+    console.log("Hold me now !!!");
+
+    // Switch the next player
+    switchPlayer();
+    if (currentScore <= 100) {
+        console.log("you WOON");
+    }
+
+});
 
 
 // Reset definieren
@@ -77,14 +110,14 @@ document.querySelector(".btn--new").addEventListener("click", function () {
 });
 
 // Roll the dice definieren.
-document.querySelector(".btn--roll").addEventListener("click", function () {
-    console.log("Roll the dice");
-});
+// document.querySelector(".btn--roll").addEventListener("click", function () {
+//     console.log("Roll the dice");
+// });
 
 // HOld you Roll and pass to the next player
-document.querySelector(".btn--hold").addEventListener("click", function () {
-    console.log("Hold me now !!!");
-});
+// document.querySelector(".btn--hold").addEventListener("click", function () {
+//     console.log("Hold me now !!!");
+// });
 
 
 
