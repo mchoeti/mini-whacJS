@@ -18,11 +18,13 @@ const score0EL = document.querySelector("#score--0");
 const score1EL = document.getElementById("score--1");
 const current0El = document.getElementById("current--0");
 const current1El = document.getElementById("current--1");
+
 const diceEl = document.querySelector(".dice");
 const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+//let scores, currentScore, activePlayer, playing;
 
 // Code niemals 2 mal verwenden daher DRY eine Funktion brauchen
 // und weil wir keine Parameter brauchen, Code is ja gleich kann man das so super einbauen
@@ -76,7 +78,7 @@ btnHold.addEventListener("click", function () {
         // checken ob score >= 100 ist weil hier gibts an WIn 
         console.log("Hold me now !!!");
 
-        if (scores[activePlayer] >= 20) {
+        if (scores[activePlayer] >= 10) {
             console.log("you WOON");
             playing = false;
             // beim Query selector wenn du eine Klassa aufrufst bitte auch den punkt machen :-)
@@ -98,16 +100,45 @@ btnHold.addEventListener("click", function () {
 
 
 // Reset definieren
-document.querySelector(".btn--new").addEventListener("click", function () {
-    console.log("You pressed the Reset");
-    score0EL.textContent = resetValue;
-    score1EL.textContent = resetValue;
-    // document.querySelector("#score--0").textContent = resetValue;
-    // document.querySelector("#score--1").textContent = resetValue;
-    //document.querySelector("#current--0").textContent = resetValue;
-    //document.querySelector("#current--1").textContent = resetValue;
-    document.getElementById("current--0").textContent = " 0.0 ";
-    document.getElementById("current--1").textContent = "0.0";
+btnNew.addEventListener('click', function () {
+    console.log("New Game launches");
+    // Score definieren, muss ein let sein, weil wir updaten :-)
+    currentScore = 0;
+    activePlayer = 0;
+    playing = true;
+    // Werte auf 0 setzen beim Start
+    score0EL.textContent = 0;
+    score1EL.textContent = 0;
+    current0El.textContent = 0;
+    current1El.textContent = 0;
     diceEl.classList.add("hidden");
-    //document.querySelectorAll("#score--0", #score--1).textContent = resetValue;
+
 });
+
+
+
+
+
+// document.querySelector(".btn--new").addEventListener("click", function () {
+//     console.log("You pressed the Reset");
+//     // var wieder auf true setzen
+//     playing = true;
+//     // winner Klasse removen 
+//     player0E.classList.remove(".player-winner");
+//     player1E.classList.remove(".player-winner");
+//     player0E.classList.add(".player-active");
+//     player1E.classList.remove(".player-active");
+
+
+
+//     score0EL.textContent = resetValue;
+//     score1EL.textContent = resetValue;
+//     // document.querySelector("#score--0").textContent = resetValue;
+//     // document.querySelector("#score--1").textContent = resetValue;
+//     //document.querySelector("#current--0").textContent = resetValue;
+//     //document.querySelector("#current--1").textContent = resetValue;
+//     document.getElementById("current--0").textContent = " 0.0 ";
+//     document.getElementById("current--1").textContent = "0.0";
+//     diceEl.classList.add("hidden");
+//     //document.querySelectorAll("#score--0", #score--1).textContent = resetValue;
+// });
