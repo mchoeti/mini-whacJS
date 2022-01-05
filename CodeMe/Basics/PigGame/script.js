@@ -3,11 +3,16 @@
 
 const resetScore = document.querySelector(".score");
 const resetValue = 0;
+const scores = [0, 0];
 
 // Score definieren, muss ein let sein, weil wir updaten :-)
 let currentScore = 0;
+let activePlayer = 0;
 
 // mal ein paar Vars definieren
+const player0E = document.querySelector(".player--0");
+const player1E = document.querySelector(".player--1");
+
 const score0EL = document.querySelector("#score--0");
 const score1EL = document.getElementById("score--1");
 const current0El = document.getElementById("current--0");
@@ -37,11 +42,20 @@ btnRoll.addEventListener("click", function () {
     if (dice !== 1) {
         console.log("Go on...");
         currentScore += dice;
-        current0El.textContent = currentScore;
+        // select active Player mit neuer JS6
+        document.getElementById(`current--${activePlayer}`).textContent = currentScore;
+        //current0El.textContent = currentScore;
 
     } else {
         console.log("Der Wert is 1, Spielerwechsel");
-        current0El.textContent = "0";
+        //current0El.textContent = "0";
+        document.getElementById(`current--${activePlayer}`).textContent = 0;
+        // Mit turnery Operator. Wenn Player = 0  dann 1 wenn 1 dann null
+        currentScore = 0;
+        activePlayer = activePlayer === 0 ? 1 : 0;
+        // fügt oder entfernt die vorhandene Klasse
+        player0E.classList.toggle("player--active");
+        player1E.classList.toggle("player--active");
     }
 });
 
@@ -56,8 +70,8 @@ document.querySelector(".btn--new").addEventListener("click", function () {
     // document.querySelector("#score--1").textContent = resetValue;
     //document.querySelector("#current--0").textContent = resetValue;
     //document.querySelector("#current--1").textContent = resetValue;
-    document.getElementById("current--0").textContent = " 67 ";
-    document.getElementById("current--1").textContent = "22";
+    document.getElementById("current--0").textContent = " 0.0 ";
+    document.getElementById("current--1").textContent = "0.0";
     diceEl.classList.add("hidden");
     //document.querySelectorAll("#score--0", #score--1).textContent = resetValue;
 });
@@ -71,7 +85,6 @@ document.querySelector(".btn--roll").addEventListener("click", function () {
 document.querySelector(".btn--hold").addEventListener("click", function () {
     console.log("Hold me now !!!");
 });
-
 
 
 
