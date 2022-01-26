@@ -32,9 +32,44 @@ const restaurant = {
         },
     },
 };
+
+// Destructuring OBJECTS
+// Also wir wollen Name, Catagories and Opening Hours
+// Beim Objekt ist die Reihenfolge EGAL beim Array nicht
+const {
+    name,
+    openingHours,
+    categories
+} = restaurant;
+console.log(name, categories, openingHours);
+
+console.log("----------------------------------");
+console.log("----------------------------------");
+console.log("----------------------------------");
+
+// hier könnte man auch gleich die Properties auch gleich mal umbenennen
+const {
+    name: restaurantName,
+    openingHours: hours,
+    categories: tags
+} = restaurant;
+console.log(categories, hours, tags);
+
+console.log("----------------------------------");
+console.log("----------------------------------");
+console.log("----------------------------------");
+
+const {
+    menu = [], starterMenu: starters = []
+} = restaurant;
+console.log(menu, starters);
+
+
+/*
+// DESTRUCTURING Arrays
+
 // receive 2 values from a function
 console.log("Now it is working ", restaurant.order(2, 0));
-
 
 // exrtrahieren von Restaurant bzw. den Kategorien
 // Extracturing verwenden wir für ganz viele Dinge.
@@ -44,8 +79,6 @@ console.log("Orig: ", main, third);
 // Beispielsweise wollen wir die Werte switchen
 [main, third] = [third, main];
 console.log("Switched: ", main, third);
-
-
 
 // Destructuring also einfach mal ein bisserl entpacken orig Array bleibt natürlich unverändert
 const arr = [2, 3, 4, 5];
@@ -63,3 +96,5 @@ console.log("From the nested array", i, j, k);
 // Do some default valuesToRemove
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+
+*/
