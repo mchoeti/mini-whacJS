@@ -16,6 +16,21 @@ const restaurant = {
         return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
     },
 
+    openingHours: {
+        thu: {
+            open: 12,
+            close: 22,
+        },
+        fri: {
+            open: 11,
+            close: 23,
+        },
+        sat: {
+            open: 0, // Open 24 hours
+            close: 24,
+        },
+    },
+
     orderDelivery: function ({
         starterIndex = 1,
         mainIndex = 0,
@@ -32,26 +47,18 @@ const restaurant = {
     // Add some RL examples for the Spread Operator
     orderPasta: function (ing1, ing2, ing3) {
         console.log(`Here is your pasta with ${ing1} and ${ing2} and ${ing3}`);
-    }
+    },
 
+    orderPizza: function (mainIngredient, ...otherIngredients) {
+        console.log(mainIngredient);
+        console.log(otherIngredients);
+    }
 };
-// //console.log(restaurant.starterMenu);
-// restaurant.orderDelivery({
-//     time: "22:30",
-//     address: "Vive del Sol, 21 ",
-//     mainIndex: 2,
-//     starterIndex: 2,
-// });
 
 // und hier mit default Werten
 console.log("--------------------------------");
 console.log("--------------------------------");
 console.log("--------------------------------");
-
-// restaurant.orderDelivery({
-//     address: "Somewhere in Graz"
-//     // Rest kommit mit Default Werten
-// });
 
 
 const arr = [7, 8, 9];
@@ -93,7 +100,7 @@ const ingredients = [
 console.log(ingredients);
 restaurant.orderPasta(...ingredients);
 
-// Objects seit 2018
+// Objects seit 2018 Spread ist immer auf der rechten Seiten
 const newRestaurant = {
     ...restaurant,
     founder: "Giuseppe",
@@ -111,3 +118,46 @@ restaurantCopy.name = "Edis Einkehr";
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
 
+// SPREAD wäre right hand simpledog
+const arrNew = [1, 2, ...[3, 4]];
+console.log(arrNew);
+console.log(...arrNew);
+
+// REST wäre left hand side und muss immer das letzte sein.
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+
+const [pizza, , risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+
+// Rest in Objects
+const {
+    sat,
+    ...weekdays
+} = restaurant.openingHours;
+console.log(weekdays);
+
+// Rest in functions
+const add = function (...numbers) {
+    //console.log(...numbers);
+    let sum = 0;
+    for (let i = 0; i < numbers.length; i++) {
+        sum += numbers[i];
+    }
+    console.log(sum);
+};
+
+add(2, 3);
+add(5, 7, 21, 2, 3, 4, 56);
+// With Rest we compress
+// With Spread we expand
+
+const x = [23, 44, 55];
+add(...x);
+console.log(add);
+
+// Auch wieder wird der Rest operator dazu verwenden alle nicht gebrauchten values zu collecten
+restaurant.orderPizza("Mushrooms", "onion", "olives", "spinach");
+// Siehe Console, dasss erste wird als MAin Argoment gestored, 
+// die anderen in ein anderes-
+restaurant.orderPizza("Mushrooms");
