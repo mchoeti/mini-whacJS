@@ -72,3 +72,18 @@ console.log([...question]);
 console.log([...question.entries()]);
 console.log([...question.keys()]);
 console.log([...question.values()]);
+
+//  Hier hat es noch Duplicates und ist ein ARRAY
+const simpleArray = [
+  "Focaccia",
+  "Focaccia",
+  "Bruschetta",
+  "Garlic Bread",
+  "Focaccia",
+  "Caprese Salad",
+];
+
+console.log(simpleArray);
+// Hier nimmer, neues Set, und damit unique Values
+const mySet = new Set([...simpleArray]);
+console.log(mySet);
