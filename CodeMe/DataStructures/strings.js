@@ -44,3 +44,101 @@ checkMiddleSeat("17B");
 checkMiddleSeat("27C");
 
 console.log(new String("Christian"));
+
+console.log("*************************");
+console.log("*************************");
+console.log(airLine.toLowerCase());
+
+// Fix capiitalization in Names
+const passenger = "ChriSTIAN";
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// A simple Function um das zu verwenden
+function correctPassengerName(name) {
+  let newName = name.toLowerCase();
+  let correctName = newName[0].toUpperCase() + newName.slice(1);
+  name = correctName;
+  return name;
+}
+
+// some examples
+console.log(correctPassengerName("DoRis"));
+console.log(correctPassengerName("TrudeLEI"));
+console.log(correctPassengerName("SMUERELLO"));
+
+// Check EMail input eigentlich mehr ein comparing beim vertipplsern
+const email = "hello@christian.io";
+const loginEmail = " Hello@ChrisTian.io \n";
+// lowerCase und Trim Methoden verwendet
+const lowerEmail = loginEmail.toLowerCase();
+const trimmedEmail = lowerEmail.trim();
+console.log(trimmedEmail);
+// geht natürlich einfacher und schneller
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log("*************************");
+console.log("*************************");
+
+function validEmails(first, second) {
+  let normalizedEmail = second.toLowerCase().trim();
+  //console.log(normalizedEmail);
+  let check = first === normalizedEmail ? true : false;
+  console.log(`Are both emails the same? ==> ${check} `);
+}
+
+validEmails("hello@christian.io", "HEllo@CHristian.io");
+validEmails("hello@christian.io", "HEllo@CHristiano.io");
+
+// Replacing Strings !! Gleich in einem Aufwasch, also mit Chaining
+const priceGB = "299,97€";
+const priceUS = priceGB.replace("€", "$").replace(",", ".");
+console.log(priceUS);
+
+// Replace also Strings
+const announcement = "All passenger, please come All to boarding door 24.";
+const updateAnnouncement = announcement.replace("door", "gate");
+console.log(updateAnnouncement);
+// Will ich mehr könnte man Regex verwenden siehe hier
+console.log(announcement.replace(/All/g, "Everyone"));
+// hab ich das Wort öfters, kann ich auch die Function replaceAll() verwenden
+console.log(announcement.replaceAll("Everyone", "All"));
+
+// Booleans auch key sensitiv
+const plane1 = "A320   no";
+const plane2 = "A320Sneo";
+console.log(plane1.includes("A320")); // Yes hat den String A320 drinnen
+console.log(plane1.includes("Boing")); // False nix mit Booing
+console.log(plane1.startsWith("A")); // True startet mit
+console.log(plane1.startsWith("Air")); // False startet nicht mit Air
+// Ternary for the win
+let checkplane = plane1 === plane2 ? true : false;
+console.log(checkplane);
+
+if (plane1.startsWith("A320") && plane1.endsWith("neo")) {
+  console.log("Yes part of the new Airbus family");
+} else {
+  console.log("Sorry old family");
+}
+
+// A simple function um zu klären ob er nur legale Dinge mit hat
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("gun") || baggage.includes("knife")) {
+    console.log("No entry sir");
+  } else {
+    console.log(`You are welcome with: ${items}`);
+  }
+
+  //console.log(baggage);
+};
+
+checkBaggage("Snacks and a gun");
+console.log("****************");
+checkBaggage("Laptop and something for my personal Things");
+console.log("****************");
+checkBaggage("Got some Food and a pocket knife");
+checkBaggage("Snacks and a gun");
+console.log("****************");
