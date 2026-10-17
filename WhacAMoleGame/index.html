@@ -4,13 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
     <title>Whac a Mole</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <h1>Whac a Mole</h1>
-    <p>Score: <strong id="score">0</strong> &middot; Time left: <strong id="time-left">60</strong></p>
+
+    <div class="stats">
+        <div class="stat"><span>Score</span><strong id="score">0</strong></div>
+        <div class="stat"><span>Time left</span><strong id="time-left">60</strong></div>
+    </div>
+
     <button id="start" type="button">Start</button>
 
     <div class="grid">
