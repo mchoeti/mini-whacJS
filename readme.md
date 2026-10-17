@@ -18,4 +18,4 @@ Die Projekte brauchen keinen Build. `index.html` im jeweiligen Ordner im Browser
 
 ## Hinweis
 
-Dateien mit API-Zugangsdaten gehören nicht ins Repo und stehen in `.gitignore`.
+Dateien mit API-Zugangsdaten gehören nicht ins Repo (siehe `.gitignore`).
