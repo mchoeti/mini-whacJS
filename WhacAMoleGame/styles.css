@@ -1,10 +1,24 @@
+body {
+    font-family: system-ui, sans-serif;
+    text-align: center;
+}
+
 .grid {
-    width: 600px;
-    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    width: min(600px, 100%);
+    margin: 1rem auto;
 }
 
 .square {
-    width: 200px;
-    height: 200px;
-    border: solid black 1px;
+    aspect-ratio: 1;
+    border: 1px solid black;
+    background: #8d6e63;
+    font-size: clamp(2rem, 10vw, 4rem);
+    cursor: pointer;
+}
+
+.square.mole::after {
+    content: "🐹";
 }

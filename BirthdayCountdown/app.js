@@ -12,7 +12,6 @@ let timerId;
 //console.log(birthday);
 
 function countDown() {
-    console.log("Tick Tock");
     const today = new Date();
     const timeSpan = birthday - today;
     //console.log(timeSpan);
@@ -31,7 +30,7 @@ function countDown() {
 
     // display left days seconds and more.
     const days = Math.floor(timeSpan / day);
-    const hours = Math.floor((timeSpan % days) / hour);
+    const hours = Math.floor((timeSpan % day) / hour);
     const minutes = Math.floor((timeSpan % hour) / minute);
     const seconds = Math.floor((timeSpan % minute) / second);
 
@@ -46,4 +45,5 @@ function countDown() {
         " seconds";
 }
 
-setInterval(countDown, second);
+timerId = setInterval(countDown, second);
+countDown();
