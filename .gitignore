@@ -6,8 +6,3 @@ node_modules/
 Thumbs.db
 .vscode/
 .idea/
-
-# lokale API-Tests (enthalten Zugangsdaten)
-CodeMe/ECM/
-CodeMe/DataStructures/api.js
-CodeMe/OOP/nodejsPost.js
